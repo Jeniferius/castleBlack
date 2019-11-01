@@ -20,4 +20,9 @@ api.get("/objects", function(req, res) {
   res.json(objects);
 });
 
+// List all players
+api.get("/players", (req, res) => {
+  res.json(players);
+});
+
 module.exports = api;
