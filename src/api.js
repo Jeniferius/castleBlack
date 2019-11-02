@@ -35,4 +35,10 @@ api.post("/addObject/:playerName/:objectName", (req, res) => {
   res.json(dataBase.players);
 });
 
+// Kill a player
+api.get("/killPlayer/:id", (req, res) => {
+  modelPlayer.killPlayer(req.params.id);
+  res.json(dataBase.players);
+});
+
 module.exports = api;

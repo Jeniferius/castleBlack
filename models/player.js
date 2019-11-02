@@ -45,3 +45,14 @@ exports.addObjectToBag = (playerName, objectName) => {
     throw "The object does not exist";
   }
 }
+
+exports.killPlayer = (playerId) => {
+  let isPlayer = false;
+  players.forEach((player) => {
+    if (player.id == playerId) {
+      player.health = 0;
+      isPlayer = true;
+    }
+  });
+  if (!isPlayer) throw "The player does not exist";
+}
