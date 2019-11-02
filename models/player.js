@@ -20,3 +20,28 @@ exports.getById = (id) => {
   if (!isPlayer) throw "The player don't exist";
   return getPlayer;
 }
+
+exports.addObjectToBag = (playerName, objectName) => {
+  let objectId;
+  let isObject = false;
+  for (let i = 0; i < dataBase.objects.length; i++) {
+    if (dataBase.objects[i].name === objectName) {
+      objectId = dataBase.objects[i].id;
+      isObject = true;
+      break;
+    }
+  }
+
+  if (isObject) {
+    let isPlayer = false;
+    players.forEach((player) => {
+      if (player.name === playerName) {
+        player.bag.push(objectId);
+        isPlayer = true;
+      }
+    });
+    if (!isPlayer) throw "The player does not exist";
+  } else {
+    throw "The object does not exist";
+  }
+}

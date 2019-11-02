@@ -29,4 +29,10 @@ api.get("/player/:id", (req, res) => {
   res.json(modelPlayer.getById(req.params.id));
 });
 
+// Arm a player with an object in its bag
+api.post("/addObject/:playerName/:objectName", (req, res) => {
+  modelPlayer.addObjectToBag(req.params.playerName, req.params.objectName);
+  res.json(dataBase.players);
+});
+
 module.exports = api;
