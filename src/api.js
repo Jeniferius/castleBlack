@@ -22,6 +22,11 @@ api.get("/players", (req, res) => {
 api.post("/insertPlayer", (req, res) => {
   modelPlayer.insert(5, "Joffrey Baratheon", 19, 100, [5]);
   res.json(dataBase.players);
-})
+});
+
+// Get player by id
+api.get("/player/:id", (req, res) => {
+  res.json(modelPlayer.getById(req.params.id));
+});
 
 module.exports = api;
