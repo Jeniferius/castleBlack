@@ -20,7 +20,7 @@ api.get("/players", (req, res) => {
 
 // Create player
 api.post("/insertPlayer", (req, res) => {
-  modelPlayer.insert(10, "Name", 20, 100, [5]);
+  modelPlayer.insert(5, "Joffrey Baratheon", 19, 100, [5]);
   res.json(dataBase.players);
 })
 
