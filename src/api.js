@@ -18,4 +18,10 @@ api.get("/players", (req, res) => {
   res.json(dataBase.players);
 });
 
+// Create player
+api.post("/insertPlayer", (req, res) => {
+  modelPlayer.insert(10, "Name", 20, 100, [5]);
+  res.json(dataBase.players);
+})
+
 module.exports = api;
