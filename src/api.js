@@ -48,4 +48,9 @@ api.get("/insertObject", (req, res) => {
   res.json(dataBase.objects);
 });
 
+// Get object by id
+api.get("/object/:id", (req, res) => {
+  res.json(modelObject.getById(req.params.id));
+});
+
 module.exports = api;
