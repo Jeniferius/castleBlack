@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 async function run() {
   app.disable("x-powered-by"); // QUESTION: any reason is this line here?
+  // - ANSWER: It helps to protect the application from some vulnerabilities. Disable header to avoid attacks
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 

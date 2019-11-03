@@ -5,7 +5,7 @@ const modelPlayer = require("../models/player");
 const modelObject = require("../models/object");
 
 // This will be your data source
-// - ANSWER: Database moved to file db.js
+// - Database moved to file db.js
 // - For maintaining an order in the exercise and because the DB are usually external. Thus we execute a more real case.
 
 // EXAMPLE ENDPOINT: LIST ALL OBJECTS
