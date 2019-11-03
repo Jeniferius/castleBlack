@@ -2,6 +2,7 @@ const { Router } = require("express");
 const api = Router();
 const dataBase = require("../db");
 const modelPlayer = require("../models/player");
+const modelObject = require("../models/object");
 
 // This will be your data source
 // - ANSWER: Database moved to file db.js
@@ -39,6 +40,12 @@ api.post("/addObject/:playerName/:objectName", (req, res) => {
 api.get("/killPlayer/:id", (req, res) => {
   modelPlayer.killPlayer(req.params.id);
   res.json(dataBase.players);
+});
+
+// Create object
+api.get("/insertObject", (req, res) => {
+  modelObject.insert(5, "hammer", -15);
+  res.json(dataBase.objects);
 });
 
 module.exports = api;
