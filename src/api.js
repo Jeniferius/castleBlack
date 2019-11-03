@@ -53,4 +53,10 @@ api.get("/object/:id", (req, res) => {
   res.json(modelObject.getById(req.params.id));
 });
 
+// Upgrade object
+api.put("/objects/:id/:newValue", (req, res) => {
+  modelObject.upgradeValue(req.params.id, req.params.newValue)
+  res.json(dataBase.objects);
+});
+
 module.exports = api;

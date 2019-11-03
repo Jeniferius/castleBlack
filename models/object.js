@@ -19,3 +19,15 @@ exports.getById = (id) => {
   if (!isObject) throw "The object does not exist";
   return getObject;
 }
+
+exports.upgradeValue = (id, newValue) => {
+  let isObject = false;
+  for (let i = 0; i < objects.length; i++) {
+    if (objects[i].id === parseInt(id)) {
+      objects[i].value = parseInt(newValue);
+      isObject = true;
+      break;
+    }
+  }
+  if (!isObject) throw "The object does not exist";
+}
