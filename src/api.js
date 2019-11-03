@@ -55,8 +55,14 @@ api.get("/object/:id", (req, res) => {
 
 // Upgrade object
 api.put("/objects/:id/:newValue", (req, res) => {
-  modelObject.upgradeValue(req.params.id, req.params.newValue)
+  modelObject.upgradeValue(req.params.id, req.params.newValue);
   res.json(dataBase.objects);
 });
+
+// Destroy object
+api.delete("/object/:id", (req, res) => {
+  modelObject.deleteObject(req.params.id);
+  res.json(dataBase.objects);
+})
 
 module.exports = api;

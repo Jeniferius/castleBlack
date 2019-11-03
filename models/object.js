@@ -31,3 +31,16 @@ exports.upgradeValue = (id, newValue) => {
   }
   if (!isObject) throw "The object does not exist";
 }
+
+exports.deleteObject = (id) => {
+  let isObject = false;
+  for (let i = 0; i < objects.length; i++) {
+    if (objects[i].id === parseInt(id)) {
+      let pos = objects.indexOf(objects[i]);
+      objects.splice(pos, 1);
+      isObject = true;
+      break;
+    }
+  }
+  if (!isObject) throw "The object does not exist";
+}
